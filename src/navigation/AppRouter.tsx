@@ -7,6 +7,7 @@ import { fireAuth } from "../config/firebaseConfig";
 import { updateAuthState } from "../state/slices/authSlice";
 
 const AppRouter: React.FC = () => {
+  
   const dispatch = useAppDispatch();
   const { user } = useSelector((state: RootState) => state.authSlice);
   useEffect(() => {
