@@ -5,4 +5,4 @@ export default function Navbar() {
     <div>Navbar</div>
   )
 }
-//TODO buraya navbar tasarlayin
+//TODO buraya navbar tasarlanıcak

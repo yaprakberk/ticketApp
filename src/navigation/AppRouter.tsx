@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import AUTHROUTE from "./AUTHROUTE";
 import MAINROUTE from "./MAINROUTE";
 import { RootState, useAppDispatch } from "../state/store";
-import { BrowserRouter as Router } from "react-router-dom";
 import { fireAuth } from "../config/firebaseConfig";
 import { updateAuthState } from "../state/slices/authSlice";
 
