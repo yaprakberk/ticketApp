@@ -13,7 +13,7 @@ const LoginAndSignup = () => {
   const formikLogin = useFormik({
     initialValues: {
       email: "deneme@deneme.com",
-      password: "123123",
+      password: "1231231ßß",
     },
 
     onSubmit: async (values) => {
