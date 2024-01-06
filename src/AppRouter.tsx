@@ -10,7 +10,6 @@ import { RootState } from "./state/store";
 import { getUserList } from "./state/slices/userSlice";
 import Landing from "./pages/Landing";
 import Page404Found from "./pages/Page404Found";
-
 import { Unsubscribe } from "firebase/firestore";
 const AppRouter: React.FC = () => {
   const dispatch = useAppDispatch();

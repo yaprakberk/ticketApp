@@ -133,5 +133,3 @@ const LoginAndSignup = () => {
 };
 
 export default LoginAndSignup;
-
-//TODO BURADA LOGIN VE SIGIN SAYFASI AYRILMASI GEREK

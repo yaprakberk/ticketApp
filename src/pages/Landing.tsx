@@ -5,5 +5,3 @@ const Landing = () => {
 };
 
 export default Landing;
-
-//TODO BURAYA BIR BEKLEME LONDING YAPILACAK
