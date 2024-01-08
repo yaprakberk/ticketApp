@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import LoginAndSignup from "./pages/LoginAndSignup";
 import { fireAuth } from "./config/FirebaseConfig";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "./state/store";
@@ -11,6 +10,13 @@ import { getUserList } from "./state/slices/userSlice";
 import Landing from "./pages/Landing";
 import Page404Found from "./pages/Page404Found";
 import { Unsubscribe } from "firebase/firestore";
+import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import { AuthRoute, MainRoutes } from "./constants/Routes";
+import Canser from "./pages/Canser";
+import Theatre from "./pages/Theatre";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 const AppRouter: React.FC = () => {
   const dispatch = useAppDispatch();
 
@@ -47,11 +53,22 @@ const AppRouter: React.FC = () => {
       ) : (
         <Routes>
           {!user ? (
-            <Route path="/" index={true} element={<LoginAndSignup />} />
+            <Route>
+              <Route />
+              <Route path={AuthRoute.login} element={<Login />} />
+              <Route path={AuthRoute.signup} element={<Signup />} />
+              <Route path="*" element={<Page404Found />} />
+            </Route>
           ) : (
             <>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<Page404Found />} />
+              <Route element={<Navbar />}>
+                <Route path="/" element={<Home />} />
+                <Route path={MainRoutes.about} element={<About />} />
+                <Route path={MainRoutes.cancer} element={<Canser />} />
+                <Route path={MainRoutes.theatre} element={<Theatre />} />
+
+                <Route path="*" element={<Page404Found />} />
+              </Route>
             </>
           )}
         </Routes>

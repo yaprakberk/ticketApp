@@ -2,6 +2,7 @@ import React from "react";
 import { useAppDispatch } from "../state/store";
 import { appLogout } from "../state/slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import { AuthRoute } from "../constants/Routes";
 const Home: React.FC = () => {
   const navi = useNavigate();
 
@@ -15,8 +16,9 @@ const Home: React.FC = () => {
       Home
       <button
         onClick={async () => {
-          logout();
-          await navi("/");
+          await logout();
+          await navi(AuthRoute.signup);
+          console.log("asd");
         }}>
         Logout
       </button>
